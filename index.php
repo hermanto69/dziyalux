@@ -39,7 +39,7 @@ include 'setting/koneksi.php';// memanggil koneksi ke database yang berada di da
 	<body>
 		<div id="head-line"></div>
 		<div id="container">
-			<div id="head-u"><img src="images/icon/logo3.png"/></div>
+			<div id="head-u"><a href="index.php"><img src="images/icon/logo3.png"/></a></div>
 			<div id="menu">
 				<ul>			 
 					<li><a href="?kontak=content">Kontak</a></li>
