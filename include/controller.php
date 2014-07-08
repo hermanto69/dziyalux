@@ -12,6 +12,10 @@ elseif($page == 'produk')
 {
 	include 'include/controller.produk.php';
 }
+elseif($page == 'cart')
+{
+	include 'include/controller.cart.php';
+}
 elseif ($page == 'home')
 {
 	include 'include/controller.home.php';

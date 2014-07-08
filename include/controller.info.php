@@ -1,5 +1,5 @@
 <?php
-$data = mysql_query("select * from content where ID_CONTENT = '$_GET[id]'");
+	$data = mysql_query("select * from content where ID_CONTENT = '$_GET[id]'");
 	$menu = mysql_fetch_array($data);
 	?>
 	<div id="c-judul">

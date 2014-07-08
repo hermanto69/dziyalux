@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 function render_menu()
 {
@@ -40,4 +41,28 @@ function render_footer()
 					<a href="#"><img src="images/icon/gmail.png" width="25" height="30" /></a>
 				</div>';
 	return $html;
+}
+
+// HELPER FUNCTION
+function indo_tanggal($tanggal)
+{
+	$tanggal = explode('-',$tanggal);
+	return $tanggal[2].'-'.$tanggal[1].'-'.$tanggal[0];
+}
+
+function indo_uang($angka)
+{
+	return number_format($angka, 2, ',', '.');
+}
+
+function break_description($html, $length)
+{
+	
+	$isi_berita = htmlentities(strip_tags($html)); // membuat paragraf pada isi berita dan mengabaikan tag html
+
+    $isi = substr($isi_berita, 0, $length); // ambil sebanyak $length karakter	
+	//echo $isi;
+    $isi = substr($isi_berita, 0, strrpos($isi, " ")); // potong per spasi kalimat
+	//echo $isi;
+	return $isi;
 }
