@@ -1,12 +1,8 @@
-<?php 
-session_start();
-if(!$_SESSION['my_user']){
-?>
-<script>
-alert('maaf anda harus login terlebih dahulu');
-document.location='../index.php';
-</script>
 <?php
+include '../include/general.php';
+if(!isset($_SESSION['my_user']))
+{
+	header('Location:login.php');
 }
 ?>
 
@@ -120,7 +116,7 @@ document.location='../index.php';
           <li><a href="?pg=kontak/data_kontak">Atur Kontak</a></li>
           <li><a href="?pg=slide/data_slide">Atur Slide</a></li>
           <li><a href="?pg=gallery/data_gallery">Atur Gallery</a></li>
-          <li><a href="../logout/logout.php">Keluar</a></li>
+          <li><a href="logout.php">Keluar</a></li>
       </ul>
   </div>
       <div id="c-isi">

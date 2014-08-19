@@ -16,6 +16,14 @@ elseif($page == 'cart')
 {
 	include 'include/controller.cart.php';
 }
+elseif($page == 'checkout')
+{
+	include 'include/controller.checkout.php';
+}
+elseif($page == 'member')
+{
+	include 'include/controller.member.php';
+}
 elseif ($page == 'home')
 {
 	include 'include/controller.home.php';

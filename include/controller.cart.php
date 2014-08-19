@@ -1,11 +1,9 @@
-<?php
-//var_dump($_SESSION['cart']);
-?>
 <div id="c-judul">
 	<div id="back"><a href="index.php"><img src="images/icon-back-home.png" width="32" height="32" /></a></div>Keranjang Belanja
 </div>
 <div id="line"></div>
 <div id="c-isi">
+<?php if (isset($_SESSION['cart'])) : ?>
 	<div class="cart" >
         <table >
             <tr>
@@ -26,26 +24,26 @@
                 </td>
             </tr>
 			<?php
-			$no = 1;
-			$grand_total = 0;
-			foreach($_SESSION['cart'] as $row)
+			$no 			= 1;
+			$grand_total 	= 0;
+			foreach($_SESSION['cart'] as $id => $row)
 			{
 				$total = $row['jumlah'] * $row['harga'];
 				echo '<tr>
-				<td width="5%">
+				<td width="5%" style="text-align:center;">
                     '.$no.'
 				</td>
                 <td width="40%">
-					'.$row['nama'].'
+					<a href="index.php?pg=produk&id='.$id.'">'.$row['nama'].'</a>
 				</td>
-                <td width="10%">
+                <td width="10%" style="text-align:center;">
                     '.$row['jumlah'].'
                 </td>
-                <td width="20%">
-                    Rp '.indo_uang($row['harga']).'
+                <td width="20%" style="text-align:right;">
+                    <span style="float:left;">Rp</span>'.indo_uang($row['harga']).'
                 </td>
-                <td width="25%">
-                    Rp '.indo_uang($total).'
+                <td width="25%" style="text-align:right;">
+                    <span style="float:left;">Rp</span>'.indo_uang($total).'
                 </td>
 				</tr>';
 				$no++;
@@ -53,11 +51,11 @@
 			}
 			?>
 			<tr>
-                <td colspan="4">
+                <td colspan="4" style="text-align:center; font-weight:bold;">
                     Total
 				</td>
-                <td width="25%">
-                    Rp <?php echo indo_uang($grand_total); ?>
+                <td width="25%" style="text-align:right;">
+                    <span style="float:left;">Rp</span><?php echo indo_uang($grand_total); ?>
                 </td>
             </tr>
 		</table>
@@ -65,5 +63,8 @@
 	<div class="cart-footer">
 		<a href="index.php?pg=checkout">CHECKOUT</a>
 	</div>
+<?php else : ?>
+	<h1>Maaf, keranjang belanja Anda masih kosong.</h1>
+<?php endif; ?>
 </div>
             

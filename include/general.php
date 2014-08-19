@@ -3,13 +3,13 @@ session_start();
 
 function render_menu()
 {
-	$html = '<ul><li><a href="?pg=kontak">Kontak</a></li><li><a href="?pg=produk">Produk</a></li>';
+	$html = '<ul><li><a href="index.php">Beranda</a></li>';
 	$data = mysql_query("select * from content where IS_AKTIF = '1'");
 	while($menu = mysql_fetch_array($data))
 	{
 		$html .= '<li><a href="?pg=info&id='.$menu['ID_CONTENT'].'">'.$menu['NAMA_CONTENT'].'</a></li>';
 	}
-	$html .= '<li><a href="index.php">Beranda</a></li></ul>';
+	$html .= '<li><a href="?pg=kontak">Kontak</a></li><li><a href="?pg=produk">Produk</a></li><li class="my-account"><a href="?pg=member">Akun Saya</a></li><li class="view-cart"><a href="?pg=cart">Keranjang Belanja</a></li></ul>';
 	return $html;
 }
 
