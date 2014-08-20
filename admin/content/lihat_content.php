@@ -1,15 +1,14 @@
-  <?php
-  include '../setting/koneksi.php';
-  $data = mysql_query("select * from content where ID_CONTENT = '$_GET[id]';");
-  $no = 1;
+<?php
+$data = mysql_query("select * from content where ID_CONTENT = '$_GET[id]';");
+$no = 1;
 $tampil = mysql_fetch_array($data);
-  ?>
+?>
 
 <style>
 img {
 	border:#666 1px solid;}
 </style>
-
+<h2>Lihat Data Content</h2>
   <table width="441" border="0" align="center">
     
     <tr>

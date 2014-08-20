@@ -1,31 +1,31 @@
 <?php
 include '../include/general.php';
+include '../setting/koneksi.php';
 if(!isset($_SESSION['my_user']))
 {
 	header('Location:login.php');
 }
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Admin</title>
-<link type="text/css" href="../css/admin.css" rel="stylesheet" />
-<link type="text/css" href="../css/jquery-ui.min.css" rel="stylesheet" />
-<link type="text/css" href="../css/jquery-ui.css" rel="stylesheet" />
-<link type="text/css" href="../css/jquery.ui.theme.css" rel="stylesheet" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Admin</title>
+	<link type="text/css" href="../css/admin.css" rel="stylesheet" />
+	<link type="text/css" href="../css/jquery-ui.min.css" rel="stylesheet" />
+	<link type="text/css" href="../css/jquery-ui.css" rel="stylesheet" />
+	<link type="text/css" href="../css/jquery.ui.theme.css" rel="stylesheet" />
 
-<script type="text/javascript" src="../setting/jquery/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="../setting/jquery/jquery.dataTables.js"></script>
-<script type="text/javascript" src="../setting/jquery/jquery-ui-1.10.2.custom.js"></script>
+	<script type="text/javascript" src="../setting/jquery/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="../setting/jquery/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="../setting/jquery/jquery-ui-1.10.2.custom.js"></script>
 
-<!-- memanggil file jquery validasi -->
-<script type="text/javascript" src="../setting/jquery/jquery.validate.js"></script>
+	<!-- memanggil file jquery validasi -->
+	<script type="text/javascript" src="../setting/jquery/jquery.validate.js"></script>
 
-<!-- memanggil file jquery tinyMce -->
-<script src="../setting/jquery/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
-<script>
+	<!-- memanggil file jquery tinyMce -->
+	<script src="../setting/jquery/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+	<script>
     $(document).ready(function() {
 	  
 	  tinyMCE.init({
@@ -45,7 +45,7 @@ if(!isset($_SESSION['my_user']))
 		theme_advanced_resizing : false,
 
 		// Example content CSS (should be your site CSS)
-		content_css : "css/content.css",
+		//content_css : "css/content.css",
 
 		// Drop lists for link/image/media/template dialogs
 		template_external_list_url : "lists/template_list.js",
@@ -87,53 +87,37 @@ if(!isset($_SESSION['my_user']))
 	$( ".klik" ).button();
 	  
     });
-  </script>
+	</script>
 </head>
-
 <body>
-<div id="container">
-  <div id="header"><h2>Website Administrator</h2></div>
-  <div id="menu">
-      <ul>
-          <li><a href="index.php">Beranda</a></li>
-          <?php
-		  include '../setting/koneksi.php';
-		  $data = mysql_query("select a.ID_CONTENT, a.NAMA_CONTENT from content a where a.IS_AKTIF = 1");
-		  while($menu = mysql_fetch_array($data)){
-		  ?>
-          <li><a href="?li=data_content&id=<?php echo $menu['ID_CONTENT'];?>"><?php echo $menu['NAMA_CONTENT'];?></a></li>
-          <?php
-		  }
-		  ?>
-      </ul>
-  </div>
-  <div id="content">
-  
-  <div id="sidebar">
-      <ul>
-          <li><a href="?pg=admin/data_admin">Atur Account</a></li>
-          <li><a href="?pg=content/data_content">Atur Content</a></li>
-          <li><a href="?pg=kontak/data_kontak">Atur Kontak</a></li>
-          <li><a href="?pg=slide/data_slide">Atur Slide</a></li>
-          <li><a href="?pg=gallery/data_gallery">Atur Gallery</a></li>
-          <li><a href="logout.php">Keluar</a></li>
-      </ul>
-  </div>
-      <div id="c-isi">
-        <?php
-                include"../setting/koneksi.php";
-			if(isset($_GET['li'])){ //jika bernilai pg maka akan memanggil file content.php yang berada pada folder include
-				include"content/lihat_content.php";
-			}elseif(isset($_GET['pg'])){
-				include "$_GET[pg].php";
-			}else{
-				include"home.php"; // jika tidak bernilai pg maka akan menampilkan file home.php
-			}
-        ?>
-       </div>
-       <div style="clear:both;"></div>
-  </div>
-  <div id="footer">Copyright&copy;D'ziyalux Kitchen | 2013</div>
-</div>
+	<div id="container">
+		<div id="header"><h1>Website Administrator</h1></div>
+		<div id="content">
+			<div id="sidebar">
+				<ul>
+					<li><a href="index.php">Beranda</a></li>
+					<li><a href="?pg=admin/data_admin">Atur Account</a></li>
+					<li><a href="?pg=content/data_content">Atur Content</a></li>
+					<li><a href="?pg=kontak/data_kontak">Atur Kontak</a></li>
+					<li><a href="?pg=slide/data_slide">Atur Slide</a></li>
+					<li><a href="?pg=gallery/data_gallery">Atur Gallery</a></li>
+					<li><a href="logout.php">Keluar</a></li>
+				</ul>
+			</div>
+			<div id="c-isi">
+			<?php
+				if(isset($_GET['li'])){ //jika bernilai pg maka akan memanggil file content.php yang berada pada folder include
+					include"content/lihat_content.php";
+				}elseif(isset($_GET['pg'])){
+					include "$_GET[pg].php";
+				}else{
+					include"home.php"; // jika tidak bernilai pg maka akan menampilkan file home.php
+				}
+			?>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+		<div id="footer">Copyright&copy;D'ziyalux Kitchen | 2013</div>
+	</div>
 </body>
 </html>
