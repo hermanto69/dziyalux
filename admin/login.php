@@ -7,16 +7,17 @@ if (isset($_SESSION['my_user']))
 }
 if ($_POST)
 {
-	$error 	= false;
 	$uname 	= mysql_real_escape_string(trim($_POST['username']));
 	$pass 	= md5(mysql_real_escape_string(trim($_POST['password'])));
 	
-	$Q 		= mysql_query("select * from account where USERNAME = '$uname' and PASSWORD = '$pass'");
+	$Q 		= mysql_query("select * from account where USERNAME = '$uname' and PASSWORD = '$pass'") or die(mysql_error());
 	$dsql	= mysql_fetch_array($Q);
 	if(mysql_num_rows($Q) == 1)
 	{
 		$_SESSION['id']			= session_id();
 		$_SESSION['my_user']	= $dsql['USERNAME'];
+		$_SESSION['my_email']	= $dsql['EMAIL'];
+		$_SESSION['my_nama']	= $dsql['NAMA'];
 		header('Location:index.php');
 	}
 	else

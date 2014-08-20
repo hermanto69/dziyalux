@@ -1,1 +1,1 @@
-Selamat Datang di Halaman Admin
+Selamat Datang <b><?php echo $_SESSION['my_nama']; ?></b>
