@@ -1,4 +1,4 @@
-<div id="c-judul">
+	<div id="c-judul">
 		<div id="back"><a href="index.php"><img src="images/icon-back-home.png" width="32" height="32" /></a></div>Contact
 	</div>
 	<div id="line"></div>
@@ -37,4 +37,3 @@
 			</table>
 		</form>
 	</div>
-	<?php
