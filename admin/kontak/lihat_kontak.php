@@ -1,5 +1,4 @@
   <?php
-  include '../setting/koneksi.php';
   $data = mysql_query("select * from kontak where ID_KONTAK = '$_GET[id]';");
   $no = 1;
   while($tampil = mysql_fetch_array($data)){
@@ -9,7 +8,7 @@
 table {
 	border:#666 1px solid;}
 </style>
-
+<h2>Lihat Data Kontak</h2>
   <table width="441" border="1" align="center">
     <tr>
       <td width="111">Nama</td>
