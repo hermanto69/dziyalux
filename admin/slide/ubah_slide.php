@@ -1,7 +1,7 @@
+<h2>Ubah Slide</h2>
 <form action="?pg=slide/ubah_post_slide&id=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data" name="form1">
   <table width="441" border="1" align="center">
    <?php
-  include '../setting/koneksi.php';
   $data = mysql_query("select * from slide_show where ID_SLIDE = '$_GET[id]'");
   $tampil = mysql_fetch_array($data);
   ?>

@@ -1,3 +1,4 @@
+<h2>Data Slide</h2>
 <a href="?pg=slide/input_slide" class="klik">Tambah Slide</a><br /><br />
 <table width="650" border="1">
   <tr id="jtabel">
@@ -8,7 +9,6 @@
     <td width="198">Aksi</td>
   </tr>
   <?php
-  include '../setting/koneksi.php';
   $data = mysql_query("select * from slide_show");
   $no = 1;
   while($tampil = mysql_fetch_array($data)){

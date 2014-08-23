@@ -2,10 +2,10 @@
 -- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Inang: localhost
--- Waktu pembuatan: 18 Jul 2014 pada 13.25
--- Versi Server: 5.5.24-log
--- Versi PHP: 5.4.3
+-- Host: localhost
+-- Generation Time: Aug 23, 2014 at 05:38 AM
+-- Server version: 5.5.24-log
+-- PHP Version: 5.4.3
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,33 +17,36 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Basis data: `skripsi_herman`
+-- Database: `skripsi_herman`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `account`
+-- Table structure for table `account`
 --
 
 CREATE TABLE IF NOT EXISTS `account` (
   `ID_ACCOUNT` int(11) NOT NULL AUTO_INCREMENT,
   `USERNAME` varchar(50) NOT NULL,
+  `NAMA` varchar(50) NOT NULL,
+  `EMAIL` varchar(50) NOT NULL,
   `PASSWORD` varchar(50) NOT NULL,
   PRIMARY KEY (`ID_ACCOUNT`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data untuk tabel `account`
+-- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`ID_ACCOUNT`, `USERNAME`, `PASSWORD`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `account` (`ID_ACCOUNT`, `USERNAME`, `NAMA`, `EMAIL`, `PASSWORD`) VALUES
+(1, 'admin', 'Admin', 'admin@dziyalux.com', '21232f297a57a5a743894a0e4a801fc3'),
+(3, 'admin2', 'Admin Kedua', 'admin2@dziyalux.com', 'c84258e9c39059a89ab77d846ddab909');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `content`
+-- Table structure for table `content`
 --
 
 CREATE TABLE IF NOT EXISTS `content` (
@@ -54,21 +57,22 @@ CREATE TABLE IF NOT EXISTS `content` (
   `IS_AKTIF` int(2) NOT NULL,
   `TANGGAL` date NOT NULL,
   PRIMARY KEY (`ID_CONTENT`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
--- Dumping data untuk tabel `content`
+-- Dumping data for table `content`
 --
 
 INSERT INTO `content` (`ID_CONTENT`, `NAMA_CONTENT`, `ISI_CONTENT`, `GAMBAR`, `IS_AKTIF`, `TANGGAL`) VALUES
-(5, 'Profile', 'ini profile', '443470-500x375.jpg', 1, '2013-05-04'),
-(6, 'About', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>\r\n<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>', '23.jpg', 1, '2013-05-05'),
-(20, 'Artikel', '<p>Kebutuhan akan kitchen set sudah menjadi bagian yang utama di rumah-rumah masa kini. Model yang minimalis, penuh warna dan lain sebagainya akan menjadikan rumah menjadi lebih menarik. Untuk itu perlu adanya pemilihan kitchen set secara tepat untuk tipe rumah Anda, baik dari segi bahan baku, model, finishing dan faktor-faktor pendukung lain.</p>\r\n<p>Dengan pengalaman di bidang kitchen set lebih dari 15 tahun, menangani export kitchen set terutama untuk negara Jepang, kami pun akhirnya mengawali produksi kitchen set secara home industri untuk memenuhi kebutuhan rumah tangga, perkantoran dan pemerintahan.</p>\r\n<p>Kami sebagai produsen kitchen set menjual kitchen set murah dengan berbagai jenis spesifikasi bahan baku dan finishing yang dapat disesuaikan dengan kebutuhan Anda dengan harga yang lebih variatif sehingga dapat menjangkau budget Anda.</p>\r\n<p>Harga Murah&hellip;. Mulai dari Rp. 1.200.000 / meter lari (disesuaikan dengan spesifikasi bahan baku). Harga dijamin bersaing.</p>\r\n<p>Kami juga dapat memproduksi berbagai mebel lain seperti meja, kursi, lemari, dipan, nakas, meja rias, partisi untuk kantor dan lain sebagainya. Kami juga produksi paket kamar set, wardrobe, office furniture dan custom furniture.</p>', 'typing.jpg', 1, '2013-10-20');
+(5, 'tes', '<p>tes</p>', '443470-500x375.jpg', 0, '2014-08-20'),
+(6, 'test', '<p>test</p>', '23.jpg', 1, '2014-08-06'),
+(20, 'Artikel', '<p>Kebutuhan akan kitchen set sudah menjadi bagian yang utama di rumah-rumah masa kini. Model yang minimalis, penuh warna dan lain sebagainya akan menjadikan rumah menjadi lebih menarik. Untuk itu perlu adanya pemilihan kitchen set secara tepat untuk tipe rumah Anda, baik dari segi bahan baku, model, finishing dan faktor-faktor pendukung lain.</p>\r\n<p>Dengan pengalaman di bidang kitchen set lebih dari 15 tahun, menangani export kitchen set terutama untuk negara Jepang, kami pun akhirnya mengawali produksi kitchen set secara home industri untuk memenuhi kebutuhan rumah tangga, perkantoran dan pemerintahan.</p>\r\n<p>Kami sebagai produsen kitchen set menjual kitchen set murah dengan berbagai jenis spesifikasi bahan baku dan finishing yang dapat disesuaikan dengan kebutuhan Anda dengan harga yang lebih variatif sehingga dapat menjangkau budget Anda.</p>\r\n<p>Harga Murah&hellip;. Mulai dari Rp. 1.200.000 / meter lari (disesuaikan dengan spesifikasi bahan baku). Harga dijamin bersaing.</p>\r\n<p>Kami juga dapat memproduksi berbagai mebel lain seperti meja, kursi, lemari, dipan, nakas, meja rias, partisi untuk kantor dan lain sebagainya. Kami juga produksi paket kamar set, wardrobe, office furniture dan custom furniture.</p>', 'typing.jpg', 1, '2013-10-20'),
+(21, 'Jenis Bahan', '', '', 1, '2014-08-13');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gallery`
+-- Table structure for table `gallery`
 --
 
 CREATE TABLE IF NOT EXISTS `gallery` (
@@ -82,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `gallery` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
--- Dumping data untuk tabel `gallery`
+-- Dumping data for table `gallery`
 --
 
 INSERT INTO `gallery` (`ID_GALLERY`, `ID_PRODUK`, `JUDUL`, `GAMBAR`, `KETERANGAN`, `DEFAULT`) VALUES
@@ -98,7 +102,7 @@ INSERT INTO `gallery` (`ID_GALLERY`, `ID_PRODUK`, `JUDUL`, `GAMBAR`, `KETERANGAN
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kontak`
+-- Table structure for table `kontak`
 --
 
 CREATE TABLE IF NOT EXISTS `kontak` (
@@ -112,22 +116,21 @@ CREATE TABLE IF NOT EXISTS `kontak` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
--- Dumping data untuk tabel `kontak`
+-- Dumping data for table `kontak`
 --
 
 INSERT INTO `kontak` (`ID_KONTAK`, `NAMA`, `EMAIL`, `NO_HP`, `PESAN`, `TANGGAL`) VALUES
 (11, 'hhh', 'hhhh@yahh.sa', '02394', 'asdsadasd', '2013-06-11'),
 (12, 'jjjj', 'jjj@yahoo.cds', '02123232', 'hohohoho', '2013-06-03'),
 (13, 'test', 'fira@gmail.com', '01213213', 'as', '0000-00-00'),
-(14, 'yyyy', 'yyyy@dguik.np', '65565656', 'dsdsds', '2013-10-20'),
-(10, 'hh', 'hhhh@yahh.sa', '845654', 'sdsad', '2013-06-18'),
-(8, 'test dialog', 'dialog@yahoo.com', '0213888234', 'semoga berhasil', '2013-06-03'),
-(15, 'Seto El Kahfii', 'setoelkahfi@propanraya.com', 'dfsdfsdf', 'sdfsfsdfs', '2014-07-07');
+(14, 'amrul', 'amrul.y@dguik.np', '65565656', '<p>Website bagus, designya juga modern</p>', '2013-10-20'),
+(10, 'hh', 'hhhh@yahh.sa', '845654', '<p>sdsad</p>', '2013-06-18'),
+(8, 'test dialog', 'dialog@yahoo.com', '0213888234', 'semoga berhasil', '2013-06-03');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk`
+-- Table structure for table `produk`
 --
 
 CREATE TABLE IF NOT EXISTS `produk` (
@@ -139,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `produk` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
--- Dumping data untuk tabel `produk`
+-- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`ID_PRODUK`, `JUDUL`, `KETERANGAN`, `HARGA`) VALUES
@@ -155,7 +158,7 @@ INSERT INTO `produk` (`ID_PRODUK`, `JUDUL`, `KETERANGAN`, `HARGA`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `slide_show`
+-- Table structure for table `slide_show`
 --
 
 CREATE TABLE IF NOT EXISTS `slide_show` (
@@ -167,12 +170,12 @@ CREATE TABLE IF NOT EXISTS `slide_show` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data untuk tabel `slide_show`
+-- Dumping data for table `slide_show`
 --
 
 INSERT INTO `slide_show` (`ID_SLIDE`, `JUDUL`, `GAMBAR`, `LINK`) VALUES
-(8, 'banner2', '20060520174809542_1.jpg', 'rr'),
-(6, 'aa', '1.jpg', 'aa');
+(8, 'banner2', 'modern-kitchen.jpg', 'rr'),
+(6, 'aa', 'inspirational-modern-kitchen-design.jpg', 'aa');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

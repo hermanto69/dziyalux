@@ -1,15 +1,14 @@
-  <?php
-  include '../setting/koneksi.php';
-  $data = mysql_query("select * from slide_show where ID_SLIDE = '$_GET[id]';");
-  $no = 1;
-  while($tampil = mysql_fetch_array($data)){
-  ?>
-  
+<?php
+$data = mysql_query("select * from slide_show where ID_SLIDE = '$_GET[id]'");
+$no = 1;
+while($tampil = mysql_fetch_array($data)){
+?>
 <style>
 table {
 	border:#666 1px solid;}
 </style>
-  <table width="441" border="1" align="center">
+<h2>Lihat Slide</h2>
+<table width="441" border="1" align="center">
     <tr>
       <td width="89">Nama</td>
       <td width="3">:</td>
@@ -30,5 +29,5 @@ table {
       <td>&nbsp;</td>
       <td><a href="?pg=slide/data_slide" class="klik">Kembali</a></td>
     </tr>
-    <? } ?>
-  </table>
+</table>
+<?php } ?>

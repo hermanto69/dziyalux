@@ -19,7 +19,7 @@ function render_slideshow()
 	$html = '';
 	while($slide = mysql_fetch_array($data))
 	{
-		$html .= '<img src="images/slide/'.$slide['GAMBAR'].'" width="1000" height="400" />';
+		$html .= '<a href="'.$slide['LINK'].'"><img src="images/slide/'.$slide['GAMBAR'].'" alt="'.$slide['JUDUL'].'" width="1000" height="400" /></a>';
 	}
 	return $html;
 }
