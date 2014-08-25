@@ -97,10 +97,12 @@ if(!isset($_SESSION['my_user']))
 				<ul>
 					<li><a href="index.php">Beranda</a></li>
 					<li><a href="?pg=admin/data_admin">Atur Account</a></li>
+					<li><a href="?pg=produk/data_produk">Atur Produk</a></li>
+					<li><a href="?pg=transaksi/data_transaksi">Atur Transaksi</a></li>
+					<li><a href="?pg=pelanggan/data_pelanggan">Atur Pelanggan</a></li>
 					<li><a href="?pg=content/data_content">Atur Content</a></li>
 					<li><a href="?pg=kontak/data_kontak">Atur Kontak</a></li>
 					<li><a href="?pg=slide/data_slide">Atur Slide</a></li>
-					<li><a href="?pg=gallery/data_gallery">Atur Gallery</a></li>
 					<li><a href="logout.php">Keluar</a></li>
 				</ul>
 			</div>
